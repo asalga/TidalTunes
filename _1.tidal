@@ -1,12 +1,12 @@
 -- set beats per second
-bps(100 / 60)
+bps(60 / 60)
 
 -- silence all tracks
 hush
 
 -- d1 - d9 are tracks / connections to superdirt
 -- play db sample 1 time per measure
-d1 $ sound "db"
+d9 $ sound "db"
 
 -- silence a track
 d1 silence
@@ -41,6 +41,18 @@ d1 $ sound "db:4 db:4 ~ db:3"
 d1 $ sound "db*4"
    # gain 0.7
 
+
+------------------
+-- FUNCTIONS
+
+-- degrade
+-- shorthand is a question mark. It removes events
+-- from a portion of a pattern
+d1  $ sound "bd*3 ul?"
+
+-- palindrome
+-- applies rev every other cycle
+d1 $palindrome $sound "arpy arpy:1 arpy:2 arpy:3"
 
 
 ------------------
