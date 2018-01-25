@@ -1,2 +1,19 @@
-bps(80/60)
+bps(120/60)
+
+d1  $fast 2 $ sound "db*4"
+
+d2 $ palindrome $ sound "hit ~ hit:2 hit:3?"
+
+-- scramble n p
+-- divide pattern p into n parts
+d3 $fast 4 $ sound $ scramble 4 "~ arpy db arpy:6"
+
+d4 $ sound $ scramble 2 "hit:3 ~ arpy:3"
+
+d1 silence
+
+d2 silence
+
+d3 silence
+
 hush

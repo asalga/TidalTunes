@@ -1,11 +1,11 @@
 -- set beats per second
-bps(60 / 60)
+bps(100 / 60)
 
 -- silence all tracks
 hush
 
 -- d1 - d9 are tracks / connections to superdirt
--- play db sample 1 time per measure
+-- play db sample 1 time per measure/(cycle?)
 d9 $ sound "db"
 
 -- silence a track
@@ -17,6 +17,14 @@ d1 $ sound "db:0"
 
 -- we can also index into other samples in the folder
 d1 $ sound "db:1"
+
+-- if the index is greater than the samples in the folder, the index gets modded
+d1 $ sound "808 808:6 808:12 808:18"
+
+-- We can change the sample number separately
+d1 $ sound "hit ~*3"
+
+d1 $ palindrome $ sound "hit ~ hit:2 hit:3"
 
 -- play db sample 4 times per measure
 d1 $ sound "db db db db"
