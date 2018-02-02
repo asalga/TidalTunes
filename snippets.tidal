@@ -1,5 +1,9 @@
 bps(100/60)
 
+hush
+
+d1 $ sound "bd bd sn:1 . cp cp cp cp cp"
+
 --------------
 d1 $ sound "bd"
 

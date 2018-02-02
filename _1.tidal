@@ -37,3 +37,10 @@ d1 $ sound "bd*4"
 
 -- silence a single track
 d1 silence
+
+-- Playtime!
+-- here are a few samples to experiment with:
+-- drum symbol: hh
+-- clap: cp
+-- high-pitched spark: ul
+-- electronic beep: hit

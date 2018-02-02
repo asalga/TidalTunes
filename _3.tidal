@@ -1,5 +1,30 @@
 -- Tutorial #3: Patterns
 hush
 
+bps(1)
+
 -- square bracket syntax creates a group
-d1 $ sound "[bd sd sd] cp"
+d1 $ sound "bd"
+
+d1 $ sound "bd bd cp"
+
+d1 $ sound "[bd bd] cp"
+
+-- A shorthand for this is to instead use '.' (aka 'marking out feet')
+d1 $ sound "bd bd . cp"
+
+-- We can specify we'd like 2 rythms to play at once (aka polyrythm)
+-- in 1 cycle "cp cp hit" is played and layered with 4 bd's
+d1 $ sound "[cp cp hit, bd*4]"
+
+-- This would be equivalent to using 2 connections:
+-- d1 $ sound "cp cp hit"
+-- d2 $ sound "bd*4"
+
+
+-- Playtime!
+d1 $ sound "[bd bd ~ sn:5 , ul:2*6]"
+
+d2 $ sound "arpy:2*2 arpy:1 . arpy:2*4 arpy:0"
+
+d3 $ n "c5 ~ e3 b4" # s "supersaw"
