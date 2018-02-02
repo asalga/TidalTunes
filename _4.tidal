@@ -1,0 +1,39 @@
+
+-- db sample 4 times per measure and the last note also has ul sample
+d1 $ sound "[db ul] db db [db:1, ul]"
+
+--
+d1 $ sound "[db, ul:2] db db [db:1, ul]"
+
+
+-- We can change the sample number separately
+
+d1 $ palindrome $ sound "hit ~ hit:2 hit:3"
+
+------------------
+-- REST
+-- we can rest using tilde ~
+d1 $ sound "db:4 db:4 ~ db:3"
+
+------------------
+-- AMPLITUDE
+-- we can change the volume/amplitude of the sample with gain
+d1 $ sound "db*4"
+   # gain 0.7
+
+
+------------------
+-- FUNCTIONS
+
+-- degrade
+-- shorthand is a question mark. It removes events
+-- from a portion of a pattern
+d1 $ sound "bd*3 ul?"
+
+-- palindrome
+-- applies rev every other cycle
+d1 $palindrome $sound "arpy arpy:1 arpy:2 arpy:3"
+
+
+------------------
+-- LEGATO

@@ -1,8 +1,71 @@
 bps(100/60)
 
-d1  $fast 2 $ sound "db*4"
+--------------
+d1 $ sound "bd"
 
-d2 $ palindrome $ sound "hit ~ hit:2 hit:3?"
+d1 $ sound "bd:0"
+
+d1 $ sound "bd" # n 0
+--------------
+
+-- shape    percussion
+-- lfo for > sythn ()  20
+-- lpf / cutoff
+-- hpf 500
+-- hpq resonance
+-- choose
+-- irand
+-- 12 7 5
+
+
+-- t4 for transitions
+-- |=|
+
+-- d1
+-- $ every 1 (|+| speed 1.5)
+-- $ sound "bd*4"
+-- # speed 1
+
+-- works on the first
+d2
+$ every 1 (|+| speed 1.5)
+$ sound "bd:3"
+# speed 1
+
+d1 silence
+
+d1
+  $ palindrome
+  $ n ((+ "[3 4  2]")
+    ("c4 ~ e3 b4" )
+  )
+  # s "supersaw"
+
+
+  -- supersaw
+  -- super square
+  -- supernoise
+  -- superpiano
+  -- supercomparator
+  --
+
+
+
+(jumpin 4)
+
+d1 $ sound ("~ [x x x x]" <~> "feel:3 db cp")
+
+d1 $ sound ("~ [x x x x]" <~> "feel:3 db cp")
+
+d1 silence
+
+d1 $ sound "hit:1"
+    #legato 0.12
+
+d1 $fast 2 $ sound "db*4"
+
+d2 $ palindrome $ sound "hit ~ hit hit" # n (choose [3])
+    -- #n "3 4 5"
 
 -- scramble n p
 -- divide pattern p into n parts
@@ -10,7 +73,7 @@ d3 $fast 1 $ sound $ scramble 4 "~ arpy db arpy:6"
 
 d4 $ sound "hit:3 ~ arpy:3" # gain 0.5
 
-d5 $slow 8 $ sound "alphabet:14*3" #gain 0.5
+d5 $slow 8 $ sound "alphabet*3" #gain 1.5 #n (irand 14)
 
 d1 silence
 
@@ -18,6 +81,6 @@ d2 silence
 
 d3 silence
 
-d4 silence
+d5 silence
 
 hush

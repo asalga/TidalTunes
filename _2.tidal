@@ -1,0 +1,19 @@
+-- Tutorial #2: Connections & Cycles
+hush
+
+-- Before getting into multiple connections, note that trying to run the
+-- following will fail:
+d1 $ sound "bd"
+d2 $ sound "hit"
+
+-- Each connection must be evaluated separately. This means, you'll need a
+-- line break between 'connections'
+d1 $ sound "bd"
+
+d2 $ sound "hit"
+
+-- A cycle is a single loop of time in Tidal
+d1 $ sound "hit:1"
+
+-- The samples will all be forced to fit into a single cycle
+d2 $ sound "bd hit arpy hh db"
