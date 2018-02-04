@@ -12,17 +12,16 @@ d1 $ sound "bd bd . cp"
 
 -- We can specify we'd like 2 rythms to play at once (aka polyrythm)
 -- in 1 cycle "cp cp db" is played and layered with 4 hh's
-d1 $ sound "[cp cp db, hh*4]"
+d1 $ sound "[cp cp bd, hh*4]"
 
 -- This would be equivalent to using 2 connections:
 -- d1 $ sound "cp cp db"
 -- d2 $ sound "hh*4"
 
 -- Instead of playing a sample, we can rest:
-d1 $ sound "db ~ hh:10"
+d1 $ sound "bd ~ hh:10"
 
 d1 $ sound "[cp ~ cp cp*1, hh*4, bd*5 ~ ~]"
-
 
 -- Playtime!
 d1 $ sound "[bd bd ~ sn:5 , ul:2*6]"
@@ -32,3 +31,5 @@ d2 $ sound "arpy:2*2 arpy:1 arpy:1*3 arpy:0"
 d3 $ note "c5 ~~~ e3 b4" # s "superpiano"
 
 d1 $ note "c5 e4/2" # sound "superpiano"
+
+d1 silence

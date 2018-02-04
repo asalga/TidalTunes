@@ -1,5 +1,4 @@
 -- Tutorial #2: Connections & Cycles
-hush
 
 -- Before getting into multiple connections, note that trying to run the
 -- following will fail:
