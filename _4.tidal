@@ -1,8 +1,7 @@
 -- Tutorial #4: Patterns continued
 hush
 
-d1
-  $ n ((+1) "[d4 d4 c3 d5, c4 c5] *2")
+d1 $ n ((+1) "[d4 d4 c3 d5, c4 c5] *2")
   # s "supersaw"
   # gain 0.5
 
@@ -13,3 +12,7 @@ d2
 d1
   $ sound "cp*4"
   # n (irand 2,4)
+
+d1 $ s "cp*4"
+# gain "1 0.9 0.8 0.6"
+# speed 1.4

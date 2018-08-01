@@ -5,8 +5,13 @@
 d1 $ sound "bd"
 d2 $ sound "hit"
 
+-- unles you use do
+do
+d1 $ sound "bd"
+d2 $ sound "hit"
+
 -- Each connection must be evaluated separately. This means, you'll need a
--- line break between 'connections':
+-- line break between 'channels':
 d1 $ sound "bd"
 
 d2 $ sound "hit"

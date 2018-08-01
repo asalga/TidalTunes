@@ -1,8 +1,8 @@
-bps(100/60)
+bps(120/60)
 
 hush
 
-d1 $ sound "bd bd sn:1 . cp cp cp cp cp"
+d1 $ sound "[bd bd sn:1 , db*6]"
 
 --------------
 d1 $ sound "bd"
@@ -20,6 +20,54 @@ d1 $ sound "bd" # n 0
 -- choose
 -- irand
 -- 12 7 5
+-- primes
+
+
+
+d1 $ n ("x(5,8)" <~> "c4 b4 c4")
+ #s "supersaw"
+ # legato (scale 0.1 0.9 (rand))
+ # lfo (scale 0.1 2 (slow 11 $ sine))
+
+d1 silence
+
+d1 $ note ("f4 e4")
+  # s "superpiano"
+  # dur "1 22"
+
+d2 $ n ("~ d2 ~ ~")
+  # s "superpiano"
+
+d2 silence
+
+d1 $ s ("x ~ ~ x*3" <~> "db sn cp")
+
+d1 $ sound (randcat ["bd ~ ~ ~", "~ ~ ~ cp", "sn*8", "feel(3,8)"])
+
+d1 $ sound (fastcat ["bd ~ ~ ~", "~ ~ ~ cp", "sn*8", "feel(3,8)"])
+
+d2 silence
+
+d2
+  $ stack [
+      stut' 2 0 (|+| speed (scale 0.5 2.5 (rand ** 2)))
+      $ stack [
+        sometimesBy 0.25 (# gain 0) $ s "~ [[~ bd] ~]",
+        sometimesBy 0.5 (# gain 0) $ s "~ [~ [bd ~]]"
+      ]
+      # shape 0.25
+      # speed 1,
+      stack [
+        sometimesBy 0.15 (# gain 0) $ s "[~ cp] ~",
+        sometimesBy 0.5 (# gain 0) $ s "[~ [~ sn]] ~",
+        sometimesBy 0.25 (# gain 0) $ s "~ [~ [~ cp]]"
+      ]
+      # n (irand 16)
+      # speed (scale 0.75 2.25 (rand **3))
+      # legato 0.65
+      # hpf 500
+      # hpq 0.5
+    ]
 
 
 -- t4 for transitions

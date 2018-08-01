@@ -1,0 +1,38 @@
+bps (60/120)
+
+
+d1 $ sound " [sn sn sn]"
+
+d2 $ sound "bd sd:3 ~ . cp cp cp"
+ #gain 0.7
+
+d3 $stut 6 0.8 0.4
+   $ sound "cp?"
+   # gain 0.7
+
+d1 $ sound "db*3 [cp? sn?]"
+  #n (irand 4)
+  # legato 0.5
+
+d1 $ n ""
+  # s "superchip"
+
+
+d2 $ every 4 (echo (negate 4/32))
+$ n "c c e"
+# s "supernoise"
+# accelerate "-9"
+# sustain "0.1"
+
+d1 $ stut 10 0.5 0.95
+$ n "c5? ~ e4 d5 d7?"
+# s "superchip"
+# legato 0.4
+
+d2 $ every 4 (echo (negate 2/32))
+$ n "e [f c] e?"
+# s "supernoise"
+# accelerate "-1"
+# sustain "0.2"
+
+hush

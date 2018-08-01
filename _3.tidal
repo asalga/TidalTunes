@@ -1,4 +1,5 @@
 -- Tutorial #3: Patterns
+hush
 
 -- square bracket syntax creates a group
 d1 $ sound "bd"
@@ -32,4 +33,4 @@ d3 $ note "c5 ~~~ e3 b4" # s "superpiano"
 
 d1 $ note "c5 e4/2" # sound "superpiano"
 
-d1 silence
+d2 silence

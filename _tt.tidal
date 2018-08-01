@@ -2,4 +2,41 @@ bps 1
 
 d1 $ sound "bd"
 
+
+d1 $ stut 6 0.4 0.8
+   $ sound "c"
+   # s "superchip"
+   # legato 0.1
+
+
+d1 $ every 2 (gain 0) $ n "c d cd"
+
+-- d1 $ linger 0.25 $ n "0 2 [3 4] 2" # sound "arpy"
+
+
+
+d1 $ every 2 (linger 0.5)
+   $ n "0 1 0 2"
+   # s "superpiano"
+   # gain 0.8
+
+
+d1 $ stut 4 0.5 0.5
+   $ sound "hit:3"
+   # gain 0.9
+
+d2 $ n "1 ~ 2 ~ 3 0"
+   # s "superchip"
+   # gain 0.5
+   # legato 2.0
+
+
+
+   # sound "arpy"
+
+
+d1 $ n "c d cd"
+# s "superpiano"
+
+
 hush

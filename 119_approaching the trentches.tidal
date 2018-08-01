@@ -1,0 +1,25 @@
+hush
+
+d1 $ every 4 (fast 8)
+   $ s "hh:8*4"
+   # gain 1.3
+
+d2 $ every 4 (fast 2)
+   $ s "cp ~2 cp"
+   # gain "0.6 0.8"
+
+d3 $ stut 2 0.5 0.5
+   $ every 4 (stut 4 1.0 0.5)
+   $ s "arpy*4"
+   # n "0 1 2 8"
+   # legato 0.5
+
+d4 $ every 3 (rev)
+   $ n ("c3 e4 ~*4 f4")
+   # s "superchip"
+   # gain 0.9
+
+d5 $ n "c c ~ e d e"
+   # s "supersaw"
+   # legato (scale 0.0 10.0 (slow 1 sine))
+   # gain 0.6
