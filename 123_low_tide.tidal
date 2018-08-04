@@ -1,0 +1,54 @@
+-- Low Tide
+hush
+
+bps(80/120)
+
+-- drum beat
+d1
+$ s "[sn hit:3 ~ sn, bd . bd ~ 808:10]"
+# gain 0.8
+
+-- hh
+d2
+$ fast 2.0
+$ every 4 (stut 8 0.5 0.5)
+$ s "[db*4, ~ hh:6*2 ~]"
+# gain 0.9
+
+-- random beep
+d3
+$ s "hit:7"
+# gain "[0 0 0 0 0 0 0.5 0]/8"
+
+-- random woodblock
+d4
+$ fast 4.0
+$ every 3 (stut 10 0.5 0.25)
+$ s "808:2"
+# gain "[0 0.81 0 0.81]/4"
+
+-- melody
+d5
+$ slow 1
+$ n "c b a d"
+# s "supersaw"
+# legato "1.5"
+# gain "[0.38 0 0.38 0]/4"
+
+d6
+$ n "[c b a ~,  ~, b3, a3, ~]"
+# s "superchip"
+# gain "0.6"
+
+-- woooom woooom
+d7
+$ stut 2 0.5 0.25
+$ s "hit:4*1"
+# legato 3.0
+# gain "[0 0 0 0 0 0 0 0.7]/8"
+
+d8
+$ slow 2
+$ n "e4 e4 d4 c4"
+# s "supersaw"
+# gain "[0 0.81 0 0.81 0 0.81 0 0.81]/8"

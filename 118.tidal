@@ -14,11 +14,7 @@ t2 (xfadeIn 1)
    # legato (scale 0.5 1.25 (fast .01 sine))
 
 
-  // 808
-  // blip
-  // alex
-  // ade
-
+  
 
 t2 silence
 

@@ -1,0 +1,51 @@
+hush
+
+bps(90/120)
+
+d1 $ s "[sn*3 db, hh:8*4, db:8 ~ db:8 ~ db:8, hh:10]"
+|+| pan sine1
+
+-- swish stut
+d2
+$ stut 12 0.25 1.0
+$ s "[hh:3, hh:9, koy:2]"
+# gain "[0 1 0 0 0]/5"
+
+d3
+$ n "c3"
+# s "superhammond"
+# legato 0.8
+# gain "[1 1 0 1]/4"
+
+d4
+$ n "~ ~ g3 a3 g3"
+# s "superhammond"
+# gain "[1 1 0 1]/4"
+
+d5
+$ n "g3"
+# s "superhammond"
+# gain "[0 0 1 0]/4"
+
+d6
+$ fast 1.0
+$ n "~*4 g3 e3 c3"
+# s "superhammond"
+# gain "[0 0 1 0]/4"
+
+d7
+$ s "[arpy:3 ~ arpy:2, arpy:0]"
+# legato "0.8"
+# s "supersaw"
+# gain "[0.8 0 0.8 0]/4"
+
+d8
+$ stut 8 0.5 0.9
+$ s "arpy ~*10"
+# n (irand 2)
+|+| vowel (choose ["i", "a", "o"])
+
+-- ambient crow
+d9 $ s "crow"
+|+| vowel (choose ["i", "a", "o"])
+# gain "[0 0 0.7 0.8 0.5 0.4 0.0]/7"

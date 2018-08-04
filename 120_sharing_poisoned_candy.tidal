@@ -1,0 +1,68 @@
+hush
+
+d1 $ s "[sn sn:5, hh*3 ~, db db*4 hh, db:1 ~ db:2 ~]"
+
+d2 $ n "c5 c5 [e4 f4]?"
+   # s "superchip"
+   # legato 0.6
+   # gain "[0.8 0 0 0]/2"
+
+d3 $ s "bd*8"
+     # gain "[1.2 0 0 0 0 0 0 0]/8"
+
+d5 $ s "arpy*4"
+  # n (irand 4)
+  # s "superchip"
+  # gain "[0.8 0.8 0 0]/4"
+  # legato 0.4
+  # voice 8.5
+
+d4 $ s "arpy*4"
+  # n "4 4 2? 3"
+  # s "supersquare"
+  # gain "[0 0 0.8 0.8]/4"
+  # legato 0.5
+
+
+
+
+-- d2 $ s "hh*3? ~"
+-- d4 $ s "bd bd hh:0"
+-- d3 $ s "db:1 ~ db:2 ~"
+
+d5 $ every 10 (stut 1 1.0 0.5)
+   $ s "arpy ~ ~ ~"
+   # n "0"
+   # s "supernoise"
+   # legato 0.5
+
+
+
+$ every 2 (rev)
+
+   $ n (stut' 2 (1 / 16) (+ (-12))
+   $ stut' 2 (1 / 8) (+ 12)
+   $ stut' 1 0 (+ (-12))
+   $ (+ "[0 0 -2 -2 -4 -2 0 0]/8") "f5 ~ ~ a5 ~ ~ c6 ~ f6 ~ g6 ~ f6 ~ c6 ~")
+
+
+
+d5 silence
+
+# legato (scale 0.5 0.25 (slow 2 sine))
+
+   d3 $ stut 8 0.5 0.5
+      $ n "c5 d6 ~*2 d2"
+      # s "supersaw"
+      # gain 0.7
+
+
+
+   t7 (xfadeIn 16)
+  $ slow 2
+  $ n (stut' 2 (1 / 16) (+ (-12)) $ stut' 2 (1 / 8) (+ 12) $ stut' 1 0 (+ (-12)) $ (+ "[0 0 -2 -2 -4 -2 0 0]/8") "f5 ~ ~ a5 ~ ~ c6 ~ f6 ~ g6 ~ f6 ~ c6 ~")
+  # s "supersaw"
+  # legato (scale 0.5 1.25 (slow 19 sine))
+  # lfo 20
+  # voice (scale 0.05 0.25 $ slow 13 sine)
+  # room 0.15 # size 0.15 # orbit 1
