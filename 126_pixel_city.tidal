@@ -1,0 +1,46 @@
+hush
+
+bps (2)
+
+d1
+$ every 2 (# gain 1.35)
+$ s "[~ hh:0*2 blip:1? hh:0*2? db:2*0 ~ hh:0*2 hh:0*1, ~ sn:1 ~, db:8*2]"
+# gain 1.25
+
+d2
+$ s "sn:1*16"
+#gain "[1 0 0 0 0 0]/6"
+
+d3
+$ every 2 (rev)
+$ s "~ cr:10 ~ lt:3*8"
+# gain 0.85
+
+d4
+$ s "[sid:2*8, hh:3]"
+# gain "[1.2 0]/2"
+# vowel (choose ["e", "i"])
+
+d5
+$ s "db:3*4 ~~"
+# gain "[0 1.25]/2"
+
+d6
+$ stut 6 0.8 0.25
+$ s "arpy:5 arpy:2 arpy:0 arpy:8?"
+# legato 1.25
+# vowel "o"
+
+d7
+$ sound (samples "[newnotes*16?]" (run 8))
+# speed (slow 1.0 $ scale 0.25 2 0.5)
+
+-- jump
+d8
+$ stut 5 0.5 1.5
+$ n "c5"
+# s (choose ["superchip"])
+-- # gain "[0 0 0 1]/4"
+# gain "[0 0 0 0 0 0 1.25 0 ]/8"
+# accelerate (sine1)
+# legato 0.25
