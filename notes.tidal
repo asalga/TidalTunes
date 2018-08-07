@@ -6,6 +6,10 @@
 -- drums stuff
 -- cr, drumtraks, house, hh, ht, feel, lt, drum, gretsch
 
--- sine1, tri,saw
+-- sine1, tri, saw
 
--- db:8 triangle
+
+
+
+triangle - db:8,9
+light static - ade:7
