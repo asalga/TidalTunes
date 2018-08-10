@@ -1,11 +1,11 @@
 hush
 
-bps (2.1)
+bps (250/120)
 
 d1 $ stack [
   s "db:3 ~ db:3*2 ~",
   s "db:3 ~ db:5 sn:2",
-  s "808:14 ~ 808:14 ~",
+  s "808:14 ~ 808:14 ~"
 ]
 # gain "[0 1]/2"
 
@@ -16,11 +16,70 @@ d2 $ stack [
 ]
 # gain "[1 0]/2"
 
-d3 $ s "db:5*4"
+d3 $ s "[db:5*8, ~ ~ sn:0 ~ ]"
+# pan sine1
 
-d4 $ stack [
-  s "db:7"
+d4
+$ stut 8 0.85 1.0
+$ stack [
+  s "~ ~ ~ bd:3"
 ]
 # gain "[1 0 0 0]/4"
 
-d5 $ s
+d5 $ stack [
+  s "hh*8"
+]
+# gain "[0 0 1.0 0]/2"
+
+d6 $ stack [
+  s "hh*2"
+]
+
+-- trill
+d7
+$ stut 10 0.65 1.0
+$ s "dr55:2"
+# gain 1.2
+# gain "[0 1.1 0 0.8]/4"
+
+-- melody 1
+d8
+$ fast 2
+$ every 2 (rev)
+$ every 5 (#gain 0)
+$ s (samples "arpy*4?" (run 4))
+-- # vowel "a"
+
+-- melody 2
+d9
+  $ slow 4
+  $ n (stut' 1 (1/16) (+4)
+  $ (+ "[0 0 0 6]/4") "c3 <~3> b2 g2?")
+  # s "superchip"
+  # legato 0.25
+  # gain 0.7
+
+
+
+
+
+
+--------------------
+d7
+$ every 2 (#gain 0)
+$ every 4 (rev)
+$ n "e3 d3 c3"
+# s "superchip"
+-- # gain "[0.91 0.81 0.7 0.81]/4"
+# legato 0.25
+# gain 0.0
+
+d9
+$ every 2 (rev)
+$ every 3 (#gain 0)
+$ n "c3 <~3> b2 g2?"
+# s "superchip"
+# vowel "a"
+# accelerate "0.01"
+# legato 0.5
+# gain 0
