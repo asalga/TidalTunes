@@ -1,0 +1,81 @@
+hush
+
+bps (2.1)
+
+d1
+$ sound "sn*16"
+# pan sine1
+# gain 0.8
+
+d2 $ stack [
+  s "sn*2 ~ ~ ~",
+  s "~ db:5*3 ~ ~",
+  s "~ ~ sn*3 ~ ~",
+  s "db:0*4"
+]
+# gain "[1 1 1 0]/4"
+
+d3 $ stack [
+  s "sn*2 ~ ~ sn*4",
+  s "~ db:5 ~ bd:9",
+  s "db:0*8"
+]
+# gain "[0 0 0 1]/4"
+
+
+-- ambient left
+d4 $ every 3 (rev)
+$ stack [
+  n "[c3 e4 ~ f3, d4 ~ d3 c3]/2"
+  #s "superchip"
+  # pan tri1
+]
+# gain 0.5
+# crush 0.8
+
+-- melody 1
+d5 $ every 3 (rev)
+   $ n "c3 e4 ~*4 f4"
+   # s "superchip"
+# gain "[1 1 1 1 0 0 0 0]/8"
+# vowel "e"
+
+-- melody 2
+d6 $ every 4 (rev)
+   $ stut 6 0.25 1.0
+   $ stack [
+      s (samples "[newnotes*4]" (run  (irand 12)))
+]
+# gain "[0 0 0 0 0 1 1 1]/8"
+# vowel "u"
+
+
+-- laser 1
+d7
+$ stut 10 0.1 2.8
+$ s "hit:8"
+# legato 0.2
+# gain "[0.6 0 0 0 0 0 0 0]/8"
+
+-- laser 2
+d8
+$ stut 10 0.1 1.5
+$ s "hit:6"
+# legato 0.8
+# gain "[ 0 0 0 0 0.0 0 0 0.7]/8"
+# accelerate 2
+
+
+
+
+-- d2 $ s "~ pluck ~ ~"
+   -- # n (irand 8)
+
+
+   -- melody 1
+   d3 $ every 4 (rev)
+      $ stack [
+       s (samples "arpy*2" (run  (irand 3)))
+   ]
+   # s "supersaw"
+   # legato 1.5

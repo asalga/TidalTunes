@@ -13,3 +13,4 @@
 
 triangle - db:8,9
 light static - ade:7
+-- db:5 - deep hit
