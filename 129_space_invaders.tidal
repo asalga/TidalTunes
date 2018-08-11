@@ -1,0 +1,83 @@
+hush
+
+bps(250/120)
+
+d1
+$ slowcat [
+  s "db:5*2",
+  s "db:3 ~ db:4 db:3",
+  s "db:3 ~ db:4 db:3",
+  s "db:5 ~ db:4 db:5"
+]
+
+d2
+$ slowcat [
+  s "hh",
+  s "hh(3,5)",
+  s "hh",
+  s "hh",
+  s "hh*8"
+]
+
+-- d3
+-- $ stut 1 0.25 1.0
+-- $ slowcat[
+--   n "e3 f3 e3 g2",
+--   n "g2 e3 f2 f3",
+--   n "~",
+--   n "~"
+-- ]
+-- # s "supersquare"
+-- # legato 0.5
+-- # gain 0.0
+
+d4
+$ slowcat [
+  s "[db:6*4]",
+  s "[db:6*4]",
+  s "[db:6*4]",
+  s "[db:5*8, 808:1 ~ 808:1 ~]",
+  s "[db:3*8, ~ ~ sn:1 ~ ]"
+]
+# pan sine1
+# gain 1.1
+
+d5
+  $ stut' 2 (2/8) ( (|+| accelerate (-0.5) ) )
+  $ s "arpy(3,8)"
+  # n (irand 4)
+  # shape 0.5
+  # speed 1
+  # accelerate (scale 0 3.5 $ slow 8 tri1 )
+  # lpf (scale 1000 10000 $ slow 4 sine1 )
+  # gain 0.6
+
+
+d6
+$ every 3 (rev)
+$ sound (samples "[newnotes*2, arpy*8]" (run 4))
+# speed (scale 0 2.0 $ slow 1 saw )
+# gain 0.8
+
+-- complement above
+d7
+$ every 3 (rev)
+$ sound (samples "arpy ~ ~ arpy ~ arpy arpy ~" (run 4))
+# gain 0.9
+
+
+
+-- laser 1
+d7 $ s "hit:7"
+# gain "[0.45 0.45 0 0 0 0 0 0]/8"
+
+-- laser 2
+d8
+$ stut' 2 (1/8) (|+| accelerate(0.015))
+$ s "[space:11]"
+# gain "[0.0 0 0 0 0 0.45 0 0]/8"
+
+-- explosion
+d9
+$ s "space:10"
+# gain "[0 0 0.75 0 0 0 0 0]/8"

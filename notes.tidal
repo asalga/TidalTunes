@@ -1,4 +1,6 @@
 hush
+
+
 -- blip, arpy, sid, ul, stab, less, latribro, koy
 -- tink, pluck, newnotes
 
@@ -45,11 +47,28 @@ d1 $ s "bass2:3"
 d1 $ s "dr55:2"
 
 
+-- (|+| speed 1) . (|-| lpf 2000) . (|+| shape 0.1)
+
+d1
+  $ stut' 4 (1/8) ( (|+| accelerate (-0.3) ) )
+  $ s "arpy(3,8)"
+  # n (irand 2+1)
+  # shape 0.5
+  # speed 1
+  # accelerate (scale 0 3.5 $ slow 8 saw )
+  # lpf (scale 1000 10000 $ slow 4 sine1 )
+  # lpq 0.45
+  # room 0.5 # size 0.5 # orbit 1
+
+d2
+  $ s "clubkick:2*2"
+  # shape 0.75
 
 
 
 d1 $ s "glitch2:2"
 # n (irand 8)
+
 
 glitch (8)
 glitch2 (8)
