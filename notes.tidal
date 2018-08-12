@@ -19,11 +19,13 @@ d1 $ s "db:8"
 -- deep hit
 d1 $ s "db:5"
 
-
+-- stuttering light triangle
+d2 $ s "dr:2"
 
 ------------------------------------------------------------
 
-
+-- light hh?
+db:0
 
 -- short static
 d1 $ s "glitch2:2"
@@ -45,6 +47,7 @@ d1 $ s "bass2:3"
 
 -- trilling
 d1 $ s "dr55:2"
+
 
 
 -- (|+| speed 1) . (|-| lpf 2000) . (|+| shape 0.1)
@@ -72,7 +75,8 @@ d1 $ s "glitch2:2"
 
 glitch (8)
 glitch2 (8)
-
+db (13)
+dr (42)
 
 808 (6)
 808bd (25)
@@ -141,13 +145,12 @@ cosmicg (15)
  cr (6)
  crow (4)
  d (4)
- db (13)
 diphone (38)
  diphone2 (12)
 dist (16)
  dork2 (4)
  dorkbot (2)
- dr (42)
+
 dr2 (6)
 dr55 (4)
 dr_few (8)
