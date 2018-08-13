@@ -1,0 +1,55 @@
+hush
+
+bps(250/240)
+
+d1
+$ s "[bd:0*8] ~ sn sn"
+
+d2 $ slowcat [
+  s "[bass:0, sn*4, db]",
+  s "[sn*4, db*2 ~*2]",
+  s "[bass:0, sn*4, db*2 ~*2]",
+  s "[sn*4, db*8]"
+]
+
+d3 $ slowcat [
+  s "bd:2 db:4",
+  s "[db:2 bd:4 [db:2*8] db:4]",
+  s "bd:2",
+  s "bd:2 db:4 db:4 ~"
+]
+
+-- melody
+d4 $ slowcat [
+  n "[c3 ~ d3 c3] c3 d3 e3",
+  n "[a3 b3 c3 d3] ~ ~ ~ ",
+  n "~",
+  n "~ ~[d3 c3 b3 a3] ~"
+]
+# s "supersaw"
+# legato 0.5
+# speed (1/4)
+
+-- melody 2
+d5
+$ stut 0 (1/4) 0.5
+$ slowcat [
+  s "<arpy:0 arpy:3>",
+  s "[arpy:2, arpy:3]",
+  s "<arpy:0 arpy:3>",
+  s "[arpy:4 arpy:3 arpy:2] arpy"
+]
+# legato 0.8
+# speed 0.5
+
+-- bass thing
+d6 $ slowcat[
+  n "[d4 f4] [c4 d4] [b4 c4] [a4 b4]",
+  n "[d4 f4] [b4 c4] [c4 d4] [a4 b4]",
+  n "[a4 b4] [d4 f4] [b4 c4] [c4 d4]",
+  n "[d4 f4] [c4 d4] [b4 c4] [a4 b4]"
+]
+# s "superhammond"
+# gain 0.5
+# room (scale 0.01 1.0 $ fast 4 sine)
+# orbit 1
