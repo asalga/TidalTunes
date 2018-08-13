@@ -12,12 +12,44 @@ hush
 -- sine1, tri, saw
 
 
+d1 $ s "drum:"
+
+--------------------------------------------
+-- hh?
+d1 $ s "db:0"
+
+-- light crash
+d1 $ s "db:1"
+
+-- ?? not drum
+d1 $ s "db:2"
+
+-- drum
+d1 $ s "db:3"
+
+-- drum
+d1 $ s "db:4"
+
+-- deep hit
+d1 $ s "db:5"
+
+--
+d1 $ s "db:6"
+
+-- crash, cutoff
+d1 $ s "db:7"
 
 -- triangle
 d1 $ s "db:8"
 
--- deep hit
-d1 $ s "db:5"
+-- trangle 2
+d1 $ s "db:9"
+----------------------------------------------------
+
+
+
+
+
 
 -- stuttering light triangle
 d2 $ s "dr:2"
@@ -66,6 +98,38 @@ d1
 d2
   $ s "clubkick:2*2"
   # shape 0.75
+
+
+
+  $ every 2 (rev)
+     $ n (stut' 2 (1 / 16) (+ (-12))
+     $ stut' 2 (1 / 8) (+ 12)
+     $ stut' 1 0 (+ (-12))
+     $ (+ "[0 0 -2 -2 -4 -2 0 0]/8") "f5 ~ ~ a5 ~ ~ c6 ~ f6 ~ g6 ~ f6 ~ c6 ~")
+
+
+
+  d5 silence
+
+  # legato (scale 0.5 0.25 (slow 2 sine))
+
+     d3 $ stut 8 0.5 0.5
+        $ n "c5 d6 ~*2 d2"
+        # s "supersaw"
+        # gain 0.7
+
+
+
+     t7 (xfadeIn 16)
+    $ slow 2
+    $ n (stut' 2 (1 / 16) (+ (-12)) $ stut' 2 (1 / 8) (+ 12) $ stut' 1 0 (+ (-12)) $ (+ "[0 0 -2 -2 -4 -2 0 0]/8") "f5 ~ ~ a5 ~ ~ c6 ~ f6 ~ g6 ~ f6 ~ c6 ~")
+    # s "supersaw"
+    # legato (scale 0.5 1.25 (slow 19 sine))
+    # lfo 20
+    # voice (scale 0.05 0.25 $ slow 13 sine)
+    # room 0.15 # size 0.15 # orbit 1
+
+
 
 
 
