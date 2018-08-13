@@ -1,0 +1,36 @@
+hush
+
+bps(250/240)
+
+d1 $ slowcat [
+  s "[sn*4, db]",
+  s "[sn*4, db*2 ~*2]",
+  s "[sn*4, db*2 ~*2]",
+  s "[sn*4, db*8]"
+]
+
+d2 $ slowcat [
+  s "bd:2 db:4",
+  s "[db:2 bd:4 [db:2*8] db:4]",
+  s "bd:2",
+  s "bd:2 db:4 db:4 ~"
+]
+
+d3 $ slowcat [
+  n "[c3 ~ d3 c3] c3 d3 e3",
+  n "[a3 b3 c3 d3] ~ ~ ~ ",
+  n "~",
+  n "~ ~[d3 c3 b3 a3] ~"
+]
+# s "supersaw"
+# legato 0.5
+# speed (1/4)
+# room 0.1
+
+d4 $ slowcat [
+  s "<arpy:0 arpy:3>",
+  s "[arpy:2, arpy:3]",
+  s "<arpy:0 arpy:3>",
+  s "[arpy:4 arpy:3 arpy:2] arpy"
+]
+# legato 0.8

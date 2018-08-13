@@ -33,7 +33,7 @@ d1 silence
 
 d1 $ note ("f4 e4")
   # s "superpiano"
-  # dur "1 22"
+  # dur "0 3"
 
 d2 $ n ("~ d2 ~ ~")
   # s "superpiano"
@@ -136,3 +136,18 @@ d3 silence
 d5 silence
 
 hush
+
+
+
+
+t7 (xfadeIn 16)
+  $ slow 2
+  $ n (stut' 2 (1 / 16) (+ (-12))
+  $ stut' 2 (1 / 8) (+ 12)
+  $ stut' 1 0 (+ (-12))
+  $ (+ "[0 0 -2 -2 -4 -2 0 0]/8") "f5 ~ ~ a5 ~ ~ c6 ~ f6 ~ g6 ~ f6 ~ c6 ~")
+  # s "supersaw"
+  # legato (scale 0.5 1.25 (slow 19 sine))
+  # lfo 20
+  # voice (scale 0.05 0.25 $ slow 13 sine)
+  # room 0.15 # size 0.15 # orbit 1
