@@ -1,0 +1,114 @@
+hush
+
+bps(250/120)
+
+d1 $ slowcat [
+  s "[sn(3,5), hh*2]",
+  s "[sn(3,5), hh*4]"
+]
+
+d2 $ s "[hh*4, ~ ~ ~ lt, sn:5 ~ ~ ~, ~ ~ db:8*2 ~ ~ ]"
+
+d3 $ slowcat [
+  n "[c d e f g f e d]*2"
+]
+-- # s "super808"
+-- # s "superpiano"
+-- # s "superchip"
+-- # s "supermandolin"
+# s "superhex"
+-- # vowel "e"
+-- # room 0.5 # orbit 1
+# legato 0.75
+# gain (scale 0.5 0.6 sine1)
+
+d3 silence
+
+d4
+$ slowcat[
+  n "c*8",
+  n "d*4",
+  n "e*8",
+  n "f*4",
+  n "d*4",
+--
+slowcat [
+ slow 1.0 $ stut 0 0.5 2.0 (n "c5 d5 e5 c5 g5 a5") # speed 2.0,
+ slow 1.0 $ (n "c5 g5 a5 c5 d5 e5 ") # speed 3.0
+],
+  n "c*8",
+  n "d*4",
+  n "f*4",
+  n "c*4",
+  n "g*4",
+  n "d*4",
+  --
+  slowcat [
+   -- slow 1.0 $ stut 0 0.5 2.0 (n "c5 d5 e5 c5 g5 a5") # speed 2.0,
+   fast 1 $ (n "c5 g5 a5 c5 d5 e5 ")
+  ]
+]
+# crush "2.5"
+# s "superchip"
+# legato 0.8
+# shape (scale 0.0 0.5 (slow 16 tri1))
+
+d8 $ stack[
+  sound (samples "[arpy*8]" (run 8))
+  # gain 0.7
+  # speed 0.25
+  # legato 0.7
+  # shape (scale 0.25 0.8 (slow 2 tri1)),
+  --
+  sound (samples "[newnotes ~]*8" rev (run "8")))
+  # gain 0.6
+  # speed 1.5
+  # shape (scale 0.25 0.8 (slow 2 sine1))
+]
+
+
+d8 silence
+------------------------------------------------------------
+
+d9 $ slowcat [
+  s "[sn, hh]*4",
+  -- s "[hh sn hh sn] ~",
+  -- s "[sn, hh]*4",
+  s "[hh sn hh sn] ~"
+]
+
+d9 $ slowcat [
+  s "bd bd:1 ~ [bd]",
+  s "bd bd:1 ~ [bd]",
+  s "bd bd:1 ~ [bd]",
+  s "bd*4 bd:1 ~ [bd]"
+]
+
+d9 $ slowcat [
+  n "c3 ~ c3 ~ e3 c3 ~",
+  n "e3 ~ e3 ~ b3 b3 ~"
+]
+# s "superchip"
+# legato 0.7
+
+d9 silence
+
+d9 $ slowcat [
+  s "~ arpy*3" # n (irand 4),
+  s "arpy:5 arpy:3 arpy:1 arpy:4"
+]
+# legato 0.4
+# speed 1.5
+
+d9 silence
+
+
+d9 $ slowcat [
+  n "c3 ~ c3 ~ e3 c3 ~",
+  n "e3 ~ e3 ~ b3 b3 ~",
+  --
+  n "c4 ~ c4 ~ e4 c4 ~",
+  n "e4 ~ e4 ~ b4 b4 ~"
+]
+# s "superchip"
+# legato 0.7

@@ -1,0 +1,46 @@
+hush
+
+bps(250/240)
+
+d1 $ slowcat [
+  s "[sd:3 ~ [sd:3 sd:3] ~ ~, db*4]",
+  s "[sd:3 ~ [sd:3 sd:3] ~ ~]",
+  s "[sd:3 ~ [sd:3 sd:3] ~ ~, db*4]",
+  s "[[sd:2*4], bd:1 bd:2, drum:2*4]"
+]
+
+d2 $ slowcat [
+  s "< [arpy:2 arpy:1 arpy:0], blip>",
+  s "< [~ arpy:4 arpy:3 arpy:2], blip:1>",
+  s "blip:2",
+  s "blip:3"
+]
+# speed 0.25
+
+-- main ambient bk
+d3
+$ every 3 (rev)
+$ sound (samples "arpy*8" (run 8))
+# speed "1.0"
+# legato (scale 0.25 2.0 $ slow 8 sine)
+# vowel "i"
+
+-- bass
+d4
+$ stut 5 0.5 1.0
+$ sound "<arpy:1 arpy:2 arpy:3 arpy:2, blip>"
+# legato 0.5
+# vowel "a"
+
+
+
+d5 $ slowcat [
+  n "c [c d]",
+  n "e ~ e ~",
+  --
+  n "f f g ~",
+  n "[[f e d]]",
+  --
+  n "~"
+]
+# s "super808"

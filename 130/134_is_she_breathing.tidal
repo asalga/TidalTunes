@@ -1,0 +1,73 @@
+hush
+
+bps (250/240)
+
+-- DUMS
+d1 $ slowcat [
+  s "[sn:1(2,4), hh*4] ",-- bd:1*2
+  s "[sn:1(2,4), hh*4]", -- bd:1*2
+  s "[hh*4]", -- bd:1(3,5)
+  -- s "hh*4"
+  s ""
+]
+
+-- heartbeat
+d2 $ slowcat [
+  s "bd:1*2 ~*2",
+  s "",
+  s "bd:1*2 ~*2",
+  s "",
+  s "bd:0*4",
+  s "",
+  s "bd:2*8" # gain 0.8,
+  s ""
+]
+# pan (sine1)
+
+-- BSSSS
+d3
+$ slowcat [
+  n "[a3, d3]",
+  n "[a3, d3]",
+  n "[g3, d3]",
+  n "[a3, d3]",
+  --
+  n "[f3 a3] e3 d3 c3",
+  n "[a3, d3]",
+  n "[f3 a3] e3 d3 c3",
+  n "[a3, d3]"
+]
+# s "superchip"
+# gain 0.6
+# voice (scale 0.25 0.85 $ slow 8 sine)
+
+-- BSSSS 2
+d4
+$ slowcat [
+  n "~ a4",
+  n "a4",
+  n "~ g4",
+  n "a4",
+  --
+  n "[f4 a4]",
+  n "[f4 a4] e4 d4 c4",
+  n "[f4 a4]",
+  n "[f4 a4] e4 d4 c4"
+]
+# s "supersaw"
+# gain 0.6
+# legato 0.9
+
+d5
+$ slowcat [
+  s "~ arpy*3" # n (irand 4),
+  s "~ [arpy:4 arpy:3 arpy:2]",
+  s "arpy:6 ~ arpy:4 ~",
+  s "~ [arpy:6 arpy:4 arpy:2]"
+]
+# vowel "i"
+# gain 0.9
+# speed 0.5
+
+d6 $ s "bleep:4"
+# gain "[0.45 0 0 0]/4"

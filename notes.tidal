@@ -1,20 +1,16 @@
 hush
 
-
--- blip, arpy, sid, ul, stab, less, latribro, koy
+--  sid, ul, stab, less, latribro, koy
 -- tink, pluck, newnotes
-
 -- metal, industrial, cp
-
 -- drums stuff
 -- cr, drumtraks, house, hh, ht, feel, lt, drum, gretsch
-
 -- sine1, tri, saw
 
 
-d1 $ s "drum:"
-
 --------------------------------------------
+-- db
+
 -- hh?
 d1 $ s "db:0"
 
@@ -47,14 +43,37 @@ d1 $ s "db:9"
 ----------------------------------------------------
 
 
+d1 $ s "drum:0"
+
+-- snare
+sd:3
 
 
+------------------------------------------------------------
+-- bleep
 
+-- heart monitor
+d2 $ s "bleep:4"
+
+
+------------------------------------------------------------
+-- dr
 
 -- stuttering light triangle
 d2 $ s "dr:2"
 
+-- single trill
+d1 $ s "dr55:2"
+
 ------------------------------------------------------------
+-- feelfx
+
+-- sonar
+d2 $ s "feelfx:0"
+
+
+------------------------------------------------------------
+
 
 -- light hh?
 db:0
@@ -77,8 +96,10 @@ d1 $ s "bleep:0"
 --
 d1 $ s "bass2:3"
 
--- trilling
-d1 $ s "dr55:2"
+
+
+d1 $ s "bass:2"
+
 
 
 
@@ -109,6 +130,30 @@ d2
 
 
 
+     hush
+
+     bps(120/60)
+
+     d1 $ stack [
+       s "bd(3,8)",
+       s "cp*8" # gain "[0 0 0 0 0 0 0 1]/4" # legato (scale 0.25 1 $ slow 7 sine )
+     ]
+
+     t1 (xfadeIn 16) $ s "crow*8" # n (irand 12) # speed (scale 0.5 16 rand)
+
+     do
+     let special = 0
+     d2
+     $ s "arpy*8"
+     # n (irand 12)
+     # gain 0.5
+     # speed (randcat (if special == 1 then [0.25, 2, 1, 0.125, 0.25, 0.5, 0.5, 1,0.25] else [1]  ) )
+     # shape 0.995
+     # legato (scale 0.25 1 $ slow 11 sine)
+
+
+
+
   d5 silence
 
   # legato (scale 0.5 0.25 (slow 2 sine))
@@ -131,20 +176,26 @@ d2
 
 
 
-
+d1 $ s "808cy:0"
 
 d1 $ s "glitch2:2"
 # n (irand 8)
 
+d2 $ s "amencutup:2"
 
 glitch (8)
 glitch2 (8)
 db (13)
 dr (42)
+808bd (25)
+808cy (25)
+diphone2 (12)
+
+ dist (16)
+ diphone (38)
+ feelfx (8)
 
 808 (6)
-808bd (25)
- 808cy (25)
 808hc (5)
 808ht (5)
 808lc (5)
@@ -209,9 +260,8 @@ cosmicg (15)
  cr (6)
  crow (4)
  d (4)
-diphone (38)
- diphone2 (12)
-dist (16)
+
+
  dork2 (4)
  dorkbot (2)
 
@@ -226,7 +276,7 @@ drumtraks (13)
 erk (1)
 f (1)
 feel (7)
-feelfx (8)
+
 fest (1)
 fire (1)
 flick (17)
@@ -358,3 +408,8 @@ wind (10)
  world (3)
  xmas (1)
  yeah (31)
+
+
+hush
+
+d1 $ s "ul:8"

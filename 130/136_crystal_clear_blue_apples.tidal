@@ -1,0 +1,72 @@
+hush
+
+bps(250/120)
+
+bps(2)
+
+-- Drums
+d1 $ slowcat [
+  s "sn sd:3",
+  s "sn sd:3, hh*4",
+  s "sn sd:3",
+  s "[sd:3(3,5) , hh*4]"
+]
+
+d2
+$ s "sn:1*2"
+#gain "[1 0 1 0]/4"
+
+
+d3 $ slowcat [
+  n "c2 f2 c2 a2",
+  n "c2 f2 c2 a2",
+ --
+  n "g2 f3 g2 f3",
+  n "g2 f3 g2 f3",
+ --
+  n "c2 a2 c2 a2",
+  n "c2 f2 c2 f2",
+  --
+  n "g3 d3 c3 a3",
+  n "g3 d3 c3 a3",
+  --
+  s "~",
+  s "~"
+]
+# s "superchip"
+-- # crush 1.22
+# gain 0.8
+-- # speed 0.5
+
+d4 $ slowcat [
+  s "arpy:1 arpy:2 arpy:3 [arpy:5 arpy:7]",
+  s "[arpy:6 arpy:6] [arpy:3 arpy:2 arpy:1 arpy:2]",
+  s "arpy:1 arpy:1 ~ arpy:2",
+  s "~",
+  --
+  s "arpy:1 arpy:2 arpy:3 [arpy:5 arpy:7]",
+  s "[arpy:6 arpy:6] [arpy:4 arpy:5 arpy:6 arpy:7]",
+  s "[arpy:2 arpy:0 arpy:2 arpy:0] [arpy:7 arpy:7]",
+  s "arpy:4*4",
+  --
+  s "arpy:1 arpy:2 arpy:3 [arpy:5 arpy:7]",
+  s "~",
+  s "arpy:6 ~ arpy:4 ~",
+  s "~",
+  --
+  s "arpy:1 arpy:2 arpy:3 [arpy:5 arpy:7]",
+  s "~",
+  s "arpy:4 ~ arpy:2 ~",
+  s "~"
+]
+-- # voice 0.9
+# vowel "a"
+# sustain "0.8"
+# shape (scale 0.25 0.5 (slow 8 tri1))
+
+d6 $ stut 4 0.5 1.0 $ slowcat [
+  s "blip:0 blip:1",
+  s "blip:2 blip:1",
+  s "~",
+  s "~"
+]
