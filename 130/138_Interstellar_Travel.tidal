@@ -1,0 +1,182 @@
+hush
+
+bps (120/60)
+
+d1 $ s "db(3,5)"
+# coarse 30
+# gain 1.25
+
+-- drum stuff
+d2 $ slowcat [
+  s "hh",
+  s "hh",
+  s "hh",
+  s "hh",
+  -- A
+  s "hh*4",
+  s "hh*4",
+  s "hh*4",
+  s "hh*4",
+  -- B
+  s "hh*4",
+  s "hh*4",
+  s "hh*4",
+  s "hh*4",
+  -- C
+  -- D
+  stack [
+    s "[hh*3]~~",
+    s "[db:6*3]~~" # gain 0.5
+  ],
+  s "hh*8",
+  stack [
+    s "[hh*3]~~",
+    s "[sd:3*3]~~" # gain 0.8
+  ],
+  s "hh*8",
+  -- E
+  stack [
+    s "[hh*3]~~",
+    s "[sd:3*3]~~" # gain 0.8
+  ],
+  s "",
+  stack [
+    s "[hh*3]~~",
+    s "[sd:3*3]~~" # gain 0.8
+  ],
+  s "hh*8"
+]
+# coarse 2
+# gain 1.0
+
+
+-- bass
+let ring = "[d4 c4 b3 a4] ~ "
+
+let updown = "[c3 f3 c3 b3 c3 f2]"
+
+let updown3 = "[c5 f5 c5 f5 c5 f5]"
+
+let updown2 = "[c4 f4 c4 f4 c4 f4]"
+
+let updown1 = "[c3 f3 c3 f3 c3 f3]"
+
+d4 $ slowcat [
+  n "c5",
+  n "f5",
+  n "c5",
+  s ""
+]
+# s "supersaw"
+# legato 0.45
+# gain 0.6
+# coarse 10
+
+
+
+d3 $ slowcat [
+  -- A
+  n ring,
+  s "~",
+  s "~",
+  s "~",
+  -- B
+  n ring,
+  s "~",
+  s "~",
+  s "~",
+  -- C
+  n updown3,
+  n updown2,
+  n updown1,
+  n ring,
+  -- D
+  stack[
+    n "f3",
+    n updown3
+  ],
+  stack[
+    n "d3",
+    n updown2
+  ],
+  stack[
+    n "d3",
+    n updown1
+  ],
+  stack[
+    n "f3",
+    n updown3
+  ],
+  -- E
+  stack[
+    n "c3",
+    n updown2
+  ],
+  stack[
+    n "f3 d3 c3",
+    n updown1
+  ],
+  stack[
+    n "c3",
+    n updown
+  ],
+  stack[
+    n "f3 d3 c3",
+    n updown
+  ]
+]
+# s "superchip"
+# coarse 2
+# legato 0.65
+# gain 0.85
+
+
+-- wooom woom
+d8 $ stack[
+  n "[c, f]"
+  # gain 0.35
+  -- # begin 1.0
+  -- # resonance 0.37
+  # speed 0.25
+  # legato 4
+  # shape (scale 0.125 1.0 (slow 1.0  sine1))
+]
+# s "supersaw"
+
+
+
+
+  --
+  s (samples "[newnotes ~]*2" (run "2"))
+  # gain 0.6
+  # speed 1.5
+  # legato 3.0
+  # shape (scale 0.25 0.8 (slow 2 sine1))
+]
+
+
+
+
+
+
+d6 $ every 2 (# speed "2.0")
+   $ s "[sid:4*4, sid:5 ~ sid:6]"
+   # gain 0.6
+
+   d6 silence
+
+
+d4 silence
+
+d4 $ slowcat [
+  n "c4",
+  n "b4",
+  n "a4",
+  --
+  n "c4 b4",
+  n "a4"
+  --
+]
+# legato 4.0
+# s "supermandolin"
+# coarse 10

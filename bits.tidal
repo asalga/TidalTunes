@@ -1,0 +1,4 @@
+-- chiptune sounding sounds
+
+d1 $ s "db(3,5)"
+# coarse 30

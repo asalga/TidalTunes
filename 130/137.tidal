@@ -1,0 +1,51 @@
+hush
+
+bps(100/60)
+
+d1 $ slowcat [
+  stack[
+    s "db(3,5)" # coarse 30,
+    s "hh" #coarse 3
+  ],
+  --
+  stack[
+    s "db(3,5)" # coarse 30,
+    s "hh" #coarse 3
+  ],
+  --
+  stack[
+    s "[db*3] ~" #coarse 30,
+    s "[hh ~ hh*2]"
+  ]
+]
+
+d2 $ s "808 808 808 808*2"
+# speed ((run 5+(irand 2))/4)
+# gain 0.8
+
+d3 $ fast 1.0 $ slowcat [
+  s "arpy:6",
+  s "arpy:5",
+  s "arpy:4",
+  s "",
+  s "arpy:5 arpy:4 arpy:0",
+  --
+  s "arpy:4",
+  s "arpy:5",
+  s "arpy:6",
+  s "~ arpy:5 arpy:4 arpy:2"
+]
+# speed 0.25
+# coarse 10
+# legato 2.0
+
+-- bass thing
+d4 $ slow 2 $ slowcat[
+  n "[d4 f4] [c4 d4] [b4 c4] [a4 b4]",
+  n "[d4 f4] [b4 c4] [c4 d4] [a4 b4]",
+  n "[a4 b4] [d4 f4] [b4 c4] [c4 d4]",
+  n "[d4 f4] [c4 d4] [b4 c4] [a4 b4]"
+]
+# s "superhammond"
+# gain 0.8
+# coarse 5
