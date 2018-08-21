@@ -1,3 +1,84 @@
-d1 $ n "a5 e5 c5 a4 e4 c4 a3 e3"
+-- "Circles and Squares"
+hush
+
+bps(90/60)
+
+d1 $ slowcat [
+  s  "[db, hh*4]" # coarse 30,
+  s  "[db, hh*8]" # coarse 30,
+  s  "[db, hh*4]" # coarse 30,
+  s  "[db*4, hh*8]" # coarse 20,
+  --
+  s  "[db, hh*4]" # coarse 30,
+  s  "[db, hh*8]" # coarse 30,
+  s  "[db, hh*4]" # coarse 30,
+  s  "[db*4, hh*16, db:8]" # coarse 15,
+  --
+  s  "[db, hh*4]" # coarse 30,
+  s  "[db*8, hh*16, db:8]" # coarse 20,
+  s  "[db, hh*4]" # coarse 30,
+  s  "[hh*4]" # coarse 5  # gain 1.1
+]
+
+-- drums 2
+d2 $ slowcat [
+  s "~ db:2",
+  s "",
+  s "",
+  s "db:2*4"
+]
+# coarse 10
+
+
+d3
+$ every 2 (rev)
+$ n "a5 e5 c5 a4 e4 c4 a3 e3"
 # s "superchip"
 # voice "0.4"
+# legato 0.5
+# gain "[0.7 0 0 0.7 0 0 0.7]/7"
+# shape (scale 0.125 0.25 (slow 1 tri1))
+
+
+
+-- melody?
+d4
+$ slowcat [
+  -- s "~ arpy*3" # n (irand 4),
+  s "",
+  s "~ [arpy:4 arpy:3 arpy:2]",
+  -- s "arpy:6 ~ arpy:4 ~",
+  s "",
+  s "~ [arpy:6 arpy:4 arpy:2]",
+  --
+  s "",
+  s "",
+  s "",
+  s ""
+]
+# speed 0.80
+# legato 0.5
+# coarse 5
+
+
+
+
+--------------------
+
+-- Bass
+d2 $ slow 2.0 $ slowcat [
+    n "~ [c3, g3] ~ c3 d3 e3",
+    n "~ [c3, g3] ~ f3 f3 e3",
+    n "~ [c3, g3] ~ c3 d3 e3",
+    n "~ [f3 f3] ~ e3 d3 c3"
+]
+# s "superchip"
+# legato 0.60
+# gain 0.5
+
+
+d2 silence
+
+
+
+d5 silence

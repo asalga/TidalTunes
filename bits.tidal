@@ -1,4 +1,11 @@
 -- chiptune sounding sounds
+hush
 
 d1 $ s "db(3,5)"
 # coarse 30
+
+d1 $ s "sid"
+
+d1 $ s "sid:5"
+
+d1 $ s "arpy"

@@ -57,3 +57,23 @@ d6 $ slowcat[
 # gain 0.5
 # room (scale 0.01 1.0 $ fast 4 sine)
 # orbit 1
+
+
+
+
+-- wooom woom
+d8 $ stack[
+  n "[c, f]"
+  # gain 0.3
+  # speed 0.25
+  # legato 4
+  # shape (scale 0.125 1.0 (fast 2.0 sine1)),
+  --
+  n "[a2, f3]"
+  # gain 0.4
+  # speed 0.5
+  # legato 4
+  # shape (scale 0.125 1.0 (slow 1.0 sine1))
+]
+# s "supersaw"
+# coarse 2
