@@ -1,0 +1,60 @@
+hush
+
+bps(2)
+
+d1 $ slowcat [
+  n "d3 d3 [c3 c3]",
+  n "d3 d3 [c3 c3]",
+  n "d3 d3 [c3 c3]",
+  n "d2 d2 [c2 c2]",
+]
+# s "superchip"
+# legato 0.3
+# speed 0.8
+
+-- bass 1
+d2 $ slowcat [
+  s "[db sn] ~ [sn ,sn]",
+  s "[db sn] ~ [sn ,sn]",
+  s "[db sn] ~ [sn ,sn]",
+  s "[db sn] ~ [sn ,sn]",
+  --
+  s "db:7 ~ db:7",
+  s "[db sn] ~ [sn ,sn]",
+  s "",
+  s ""
+]
+#coarse 10
+# gain 1.1
+-- # coarse 10
+
+
+d4 $ slowcat [
+  s "",
+  s "",
+  s "",
+  s "",
+  s "[arpy:5*4]" #speed 1.0,
+  s "[arpy:4*4]",
+  s "",
+  s ""
+]
+# coarse 10
+# legato 0.5
+# speed 0.25
+
+
+d3 $ slowcat [
+  s "arpy:5",
+  s "[newnotes:4 newnotes:3]",
+  s "[[newnotes:3*2] newnotes:4 newnotes:3]",
+  s "[newnotes:4 newnotes:3]",
+  --
+  s "",
+  s "",
+  s "[arpy:8*3]" #speed 1.0,
+  s "[arpy:7*2]"
+]
+# coarse 10
+# legato 0.5
+# speed 0.25
