@@ -29,7 +29,7 @@ d1 $ s "db:4"
 -- deep hit
 d1 $ s "db:5"
 
---
+-- deep hit less gain
 d1 $ s "db:6"
 
 -- crash, cutoff
@@ -46,7 +46,7 @@ d1 $ s "db:9"
 d1 $ s "drum:0"
 
 -- snare
-sd:3
+d1 $ s "sd:3"
 
 
 ------------------------------------------------------------

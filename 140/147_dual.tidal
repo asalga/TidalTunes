@@ -1,0 +1,87 @@
+hush
+
+bps(2)
+
+d1 $ slowcat [
+  stack [
+    s "db:5 ~ ~ ~ ",
+    s "db*4"
+  ],
+  stack [
+    s "db:5 ~ ~ ~ ",
+    s "~ ~ db ~"
+  ],
+  stack [
+    s "db:5 ~ ~ ~ ",
+    s "~ ~ db ~"
+  ],
+  stack [
+    s "db:5 ~ ~ ~ ",
+    s "~ ~ db ~"
+  ],
+  stack [
+    s "db:5 ~ ~ ~ ",
+    s "~ ~ db ~"
+  ],
+  stack [
+    s "db:5 ~ ~ ~ ",
+    s "~ ~ db ~"
+  ],
+  stack [
+    s "db:5 ~ ~ ~ ",
+    s "~ ~ db ~"
+  ],
+  stack [
+    s "~ ~ db ~"
+  ]
+]
+
+d2 $ slow 4 $ slowcat [
+  n "c3",
+  n "",
+  n "d3",
+  n "",
+  n "f3",
+  n ""
+]
+# s "superhex"
+# legato 1.0
+# gain 1.25
+
+d4 $ slowcat [
+  n "c4",
+  n "b4",
+  n "a4",
+  n "c4 b4",
+  --
+  n "a4",
+  n "c4",
+  n "b5",
+  n "a4",
+  --
+  n "e c",
+  n "",
+  n "",
+  n "",
+  --
+  n "c4",
+  n "",
+  n "a4",
+  n "",
+  --
+  n "",
+  n "",
+  n "",
+  n ""
+]
+# legato 4.0
+# s "supermandolin"
+# coarse 2
+
+-- woom
+d8 $ stack[
+  n "[c, f]" # gain 0.3 # speed 0.25 # legato 4 # shape (scale 0.125 1.0 (slow 1.0  sine1)),
+  n "[d]" # gain 0.3 # speed 0.25 # legato 4,
+  n "[c4,f4]" # gain 0.3 # speed 0.25 # legato 4
+]
+# s "supersaw"
