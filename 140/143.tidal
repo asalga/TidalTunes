@@ -1,0 +1,58 @@
+hush
+
+bps(2)
+
+let drums1 = "[db:5 sn]*4"
+
+let drums2 = "sn*4"
+
+d1 $ slowcat [
+  s drums1 # coarse 2,
+  s drums1 # coarse 2,
+  s drums1 # coarse 2,
+  s drums1 # coarse 2,
+  --
+  s drums2 # coarse 1,
+  s drums2 # coarse 1,
+  s drums2 # coarse 1,
+  s drums2 # coarse 1
+]
+
+d2 $ slowcat [
+  s "[db:3*4, ht, hh]",
+  s "[db:3*4, ht, hh]",
+  s "[db:3*4, ht, hh]",
+  s "[hh*4]" # gain 1.1
+]
+
+d4 $ s (samples "arpy*8" (run 16))
+# speed (fast 4 $ scale 1 2 sine)
+# vowel (choose["e", "a"])
+
+d5
+$ rev
+$ sound (samples "newnotes*8" (run 8))
+# legato (scale 0.1 4.0 $ slow 4 sine1)
+# gain "[1.2 0 0 0]/4"
+# vowel "i"
+
+d6 $ slowcat [
+  n "c3 ~ c3 ~ e3 c3 ~",
+  n "",
+  n "e3 ~ e3 ~ b3 b3 ~",
+  n ""
+]
+# s "supersaw"
+# speed 0.125
+# gain 0.8
+# legato (scale 1 2.0 $ slow 4 sine1)
+
+-- wooom woom
+d8 $ stack[
+  n "[c, f]"
+  # gain 0.35
+  # speed 0.25
+  # legato 2
+  # shape (scale 0.125 1.0 (slow 2.0  sine1))
+]
+# s "supersaw"

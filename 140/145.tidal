@@ -1,0 +1,61 @@
+hush
+
+bps(2)
+
+d1 $ slowcat [
+  stack[
+    s "db sn sn ~",
+    s "~ db:3 db:5 ~"
+  ],
+  s "db sn sn ~",
+  s "db sn sn ~",
+  s "db sn sn ~"
+]
+#coarse 2
+
+d2 $ stack [
+  s "db*4",
+  s "[db:3 db:5]"
+]
+#coarse 2
+
+d3 $ every 4 (stut 0 0.5 0.50) $ slowcat [
+   n "c3 d3 e3",
+   n "",
+   n "~ ~ d3 f3",
+   n ""
+]
+# s "superchip"
+# gain 0.8
+# legato 0.3
+# coarse 10
+
+d4 $ slowcat [
+  s "",
+  s "arpy:3",
+  s "",
+  s "[arpy:3 arpy:1] ~",
+  s "",
+  s "[ ~ arpy:2 ~ arpy:4, blip:4 ~ blip:2 ~]",
+  s ""
+]
+#coarse 2
+
+d5  $ s "[hh:8*8] ~ ~"
+    # gain "[1 0 0 0 0 0 0 0]/8"
+
+
+d7 $ fast 8 $ s "hh:8*2 ~ ~"
+   # gain 1.25
+
+d7 silence
+
+-- wooom woom
+d8 $ stack[
+  n "[c, e]"
+  # gain 0.35
+  # speed 1.5
+  # legato 2
+  # shape (scale 0.125 1.0 (slow 1.0 sine1))
+]
+# s "supersaw"

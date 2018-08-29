@@ -1,0 +1,72 @@
+hush
+
+bps(2)
+
+d1 $ slowcat [
+  s "sd:3 db:4 ~ db",
+  s "sd:3 db",
+  s "sd:3 db:4 ~ db",
+  s "sd:3 db",
+  --
+  s "sd:3 db:4 ~ db",
+  s "sd:3 db",
+  s "sd:3 db:4 ~ db",
+  s "[sd:3 db:4 ~ db,  ~ cp  ~ cp]"
+]
+# coarse 10
+
+d2
+$ fast 2.0
+$ every 3 (stut 10 0.5 0.5)
+$ s "808:1"
+# gain "[0 0.8 0 0.8]/4"
+
+
+let b = "bass2:3";
+
+d3 $ slowcat[
+ s b,
+ s b,
+ s b,
+ s b,
+ s "",
+ s "",
+ s "",
+ s ""
+]
+# coarse 4
+# gain 0.8
+
+d4 $ stut 5 0.5 0.25 $ every 3 (rev) $ slowcat [
+  n "",
+  n "",
+  n "",
+  n "",
+  --
+  n "c",
+  n "",
+  n "d c",
+  n "",
+  n "[d d] c"
+]
+# s "superhammond"
+# legato 0.248
+# gain 0.8
+# speed "0.140"
+
+-- DAT hh
+d5 $ slowcat [
+  s "db*4",
+  s "db*4",
+  s "db*4",
+  s "db*4",
+  s "db ~ db ~",
+  s "db*4",
+  s "db ~ db ~"
+]
+
+d6 $slow 8 $ slowcat [
+  n "[f3 a3] e3 d3 c3"
+]
+# s "supermandolin"
+# gain 1.5

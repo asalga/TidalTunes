@@ -1,6 +1,7 @@
 -- chiptune sounding sounds
 hush
 
+-- snare
 d1 $ s "db(3,5)"
 # coarse 30
 

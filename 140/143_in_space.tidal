@@ -1,0 +1,72 @@
+-- 143 "In Space"
+hush
+
+bps(2)
+
+d1 $ stack [
+  s "db sn ~ ~",
+  s " ~ ~ ht ht"
+]
+# coarse 30
+
+-- wooom woom
+d2 $ stack[
+  n "[c, f]"
+  # gain 0.35
+  # speed 0.25
+  # legato 2
+  # shape (scale 0.125 1.0 (slow 2.0  sine1))
+]
+# s "supersaw"
+
+d3 $ slowcat [
+  s "~ ~ ~ sn:3",
+  s "~ ~ ~ sn:3",
+  s "sn:3 sn:3 ~ sn:3",
+  s "[db:3*8, sn:3]"
+]
+
+d4 $ slowcat [
+  n "c3 ~ f2 ~" # speed 1.0,
+  n "e3 ~ f3 ~" # speed 1.0,
+  n "c3 ~ f2 ~" # speed 1.0,
+  n " " ,
+  --
+  n "c3 ~ ~ f2" # speed 1.0,
+  n "~ d3 e3 ~" # speed 1.0,
+  n "g3 f3 e3 d3" # speed 1.0,
+  n "~"
+]
+# s "supersaw"
+# coarse 10
+# legato 0.55
+-- # vowel "o"
+# gain 0.8
+
+d6
+$ every 2 (rev)
+$ every 2 (# speed "2")
+$ s "[sid:4 ~ arpy arpy:5] [arpy:8*4, sid:3, sid:8]"
+# vowel (choose ["o","a","e"])
+# gain "[0 0 1 1]/4"
+
+d8 $ stut 8 0.25 1.0
+$ s "sid:5"
+# gain "[1.4 0 1.5 0]/4"
+# speed "[1.0 0 0.85 0]/4"
+
+-- laser & explosion
+d9 $ slowcat [
+  s "",
+  s "",
+  s "",
+  s "",
+  --
+  s "",
+  s "",
+  s "",
+  s "[space:11 space:11] ~ ~ space:10"
+]
+# gain 0.8
+
+d9 silence

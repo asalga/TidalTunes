@@ -1,0 +1,18 @@
+hush
+
+bps(2.5)
+
+
+
+
+d1 $ slowcat [
+  n "c",
+  n "c5",
+  n "d",
+  n "d",
+  n "c",
+  n "c",
+  n "a2",
+  n "c"
+]
+#s "superchip"
