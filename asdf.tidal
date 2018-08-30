@@ -1,0 +1,42 @@
+bps(1.0)
+
+hush
+
+d4
+  $ slow (choose [1, 2, 4, 8])
+  $ n (stut' 2 0 (+ (-12))
+    $ (+ "[0 12 24 12]/4")
+    $ "[a5 g5 e5 c5] [b4 a4 g4 e4] [c4 b3 a3 g3] [e3 c3 b2 a2]")
+  # s "supersaw"
+  # voice (scale 0.95 0.05 (slow 16 (saw ** 2)))
+  # lfo 4000
+
+
+d1 $ slowcat [
+  stack [
+    s "db:5 ~ ~ ~ ",
+    s "db*4"
+  ],
+  stack [
+    s "[db:5, db:4] ~ ~ ~ ",
+    s "~ ~ db ~"
+  ],
+  stack [
+    s "db:5 ~ ~ ~ ",
+    s "db*8"
+  ],
+  stack [
+    s "[db:5, db:4] ~ ~ ~ ",
+    s "~ ~ db ~"
+  ]
+]
+# gain 2.0
+# coarse 5
+
+d2 $ slow (choose [1, 2, 4, 8])
+  $ n (stut' 5 0 (+ (-6))
+    $ (+ "[24 6 12 12]/4")
+    $ "[a4 g4 e4 c4] [c4 b3 a3 g3] [e3 c3 b2 a2] [b3? a3? g3? e3?]")
+  # s "superchip"
+  # crush 6
+  # lfo 1000

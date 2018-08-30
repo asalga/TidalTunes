@@ -1,0 +1,53 @@
+hush
+
+bps(2)
+
+let loop1 = "[sd:3 db:5 ~ ~, hh*4]"
+
+let loop2 = "[sd:3 db:5 ~ sd:3, hh ~ ~ hh:3]"
+
+d1 $ slowcat [
+  s loop1,
+  s loop2,
+  s loop1,
+  stack [
+    s "[sd:3 sd:3 db:5 ~, ~ hh hh:8 ~]"
+  ],
+  --
+  s loop1,
+  s loop2,
+  s "hh*4 sn*4",
+  s "sn db sn db"
+]
+
+d2 $ slow 1 $ slowcat [
+  n "c ~ b4 ~",
+  n "c d e ~ ",
+  n "",
+  n "e",
+  --
+  n "",
+  n "",
+  n "e",
+  n ""
+]
+# s "superhex"
+# gain 0.8
+# speed 0.13
+
+d3 $ slowcat[
+  s "newnotes:2 newnotes:2 ~ newnotes:1",
+  s "",
+  s "newnotes:2 newnotes:2 ~ newnotes:1",
+  s (samples "newnotes*8" (run 8))
+]
+-- # speed 0.5
+
+d4 $ slowcat [
+  s "",
+  s "arpy:5 arpy:3 arpy:1 arpy:4",
+  s "",
+  s ""
+]
+# legato 0.8
+# speed 1.25

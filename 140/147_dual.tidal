@@ -70,18 +70,32 @@ d4 $ slowcat [
   n "",
   --
   n "",
-  n "",
+  n "e c",
   n "",
   n ""
 ]
 # legato 4.0
 # s "supermandolin"
-# coarse 2
+# crush 10
+# cutoff 2000
+
+d7 $ rev
+  $ slow 4
+  $ n (run 4)
+# s "newnotes"
+# gain "[1 0 0 0]/4"
 
 -- woom
 d8 $ stack[
   n "[c, f]" # gain 0.3 # speed 0.25 # legato 4 # shape (scale 0.125 1.0 (slow 1.0  sine1)),
   n "[d]" # gain 0.3 # speed 0.25 # legato 4,
-  n "[c4,f4]" # gain 0.3 # speed 0.25 # legato 4
+  n "[c4,f4]" # gain 0.3 # speed 0.25 # legato 4,
+  n "",
+  --
+  n "",
+  n "",
+  n "",
+  n ""
 ]
 # s "supersaw"
+# legato "[2 2 2 0.4]/4"
