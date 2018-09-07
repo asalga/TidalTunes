@@ -1,0 +1,119 @@
+hush
+
+bps(2.4)
+
+d1 $ fast 4 $ slowcat[
+    n "",
+    n "",
+    n "",
+    n "",
+    --
+   n "",
+   n "",
+   n "",
+   n "",
+   --
+   n "",
+   n "",
+   n "",
+   n "",
+   --
+   n "",
+   n "",
+   n "",
+   n "",
+   --
+   n "d5 ~ ~ ~" # legato 2.0,
+  stack[
+    n "e5 "  # legato 0.5,
+    n "~ ~ c5 ~" # legato 2.0
+  ],
+  --
+  n "",
+  n "c5 d5 c5 ~" # legato 1.0,
+  n "c5 d5 g4 ~" # legato 1.0,
+  n "",
+  --
+  n "d5 ~ ~ ~" # legato 2.0,
+   stack[
+     n "e5 "  # legato 0.5,
+     n "~ ~ c5 ~" # legato 2.0
+   ],
+   --
+   n "",
+   n "c6 d6 c6 ~" # legato 1.0,
+   n "c6 d6 g5 ~" # legato 1.0,
+   n "",
+   n "d6 ~ ~ ~" # legato 2.0,
+    stack[
+      n "e6 "  # legato 0.5,
+      n "~ ~ c6 ~" # legato 2.0
+    ]
+]
+# speed 0.013
+# s "superchip"
+
+
+d2
+$ slowcat [
+  s "[db:6*4]",
+  s "[db:6*4]",
+  s "[db:6*4]",
+  s "[db:5*8, 808:1 ~ 808:1 ~]",
+  s "[db:3*8, ~ ~ sn:1 ~ ]"
+]
+# pan sine1
+# gain 1.6
+
+d3
+$ slowcat [
+  s "[db*4, sn:3]",
+  s "[db*4, sn:3]",
+  s "[db*4, sn:3]",
+  s "[db*4, sn:3]",
+  --
+  s "[cp ~ cp cp, ~ sn ~ ~]",
+  s "[sn*4, db*8]",
+  s "[db*8, sn:3]",
+  s "[db*4, sn:3]"
+]
+# gain "[1 1 1 1]/4"
+
+
+
+d4
+$ every 3 (rev)
+$ slowcat[
+  s (samples "[newnotes*2, arpy*8]" (run 4))
+]
+
+d5 silence
+
+
+
+d9
+$ fast 2
+$ slowcat [
+  -- s "",
+  -- s "",
+  -- s "",
+  -- s "",
+  -- --
+  -- s "",
+  -- s "",
+  -- s "",
+  -- s "",
+  -- --
+  s "",
+  s "",
+  s "",
+  s "",
+  -- --
+  s "",
+  s "",
+  s "",
+  s (samples "[newnotes*4]" ( rev( run 4)))
+]
+
+
+d9 silence

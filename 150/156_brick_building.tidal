@@ -1,0 +1,60 @@
+hush
+
+bps(2)
+
+d1 $ slowcat [
+    s "[db(3,5) , hh*4]" ,
+    s "[db(3,5) , hh ~ hh ~]",
+    s "[db(3,5) , hh*4]",
+    s "[db*4, hh ~ hh ~]"
+]
+# coarse 20
+
+d2 $ slowcat [
+  s "arpy:0",
+  s "arpy:3",
+  s "arpy:0 arpy:1 arpy:2 ~" # legato 0.8,
+  s "",
+  --
+  s "arpy:1",
+  s "arpy:0",
+  s "arpy:2 arpy:2 arpy:1 ~" # legato 0.7,
+  s "arpy:0",
+  --
+  s "arpy:3",
+  s "",
+  s "arpy:3 arpy:2 arpy:0 ~",
+  s ""
+]
+# speed 0.5
+# coarse 5
+
+d3 $ slowcat [
+  s "~ ~ ~ sn",
+  s "[db:3*4, sn:3]",
+  s "sn  ~  ~ sn",
+  s ""
+]
+# coarse 5
+
+d4
+$ every 8 (# speed 0.85)
+$ slowcat [
+  s "newnotes*4",
+  s "newnotes*4",
+  s "",
+  s "",
+  --
+  s "newnotes:2 ~ ~~",
+  s "newnotes:1 ~ ~~",
+  s "",
+  s ""
+]
+
+-- triangle
+d5
+$ slow 2
+$ slowcat[
+  -- s "",
+  s "db:8 ~ ~ ~"
+]

@@ -1,0 +1,69 @@
+hush
+
+bps(1)
+
+d1 $ slowcat [
+  s "~ hh db ~",
+  s "~ hh ~ ~"
+]
+
+d2
+$ stut 4 0.5 0.5
+$ slowcat [
+  s "",
+  s "",
+  s "",
+  s "sd:3",
+  --
+  s "",
+  s "",
+  s "",
+  s "sd ~ sd ~"
+]
+# gain 0.8
+
+d3 $ slowcat [
+  s "",
+  s "sn",
+  s "",
+  s "~ sn sn ~"
+]
+
+-- triangle
+d4 $ s "db:8*2"
+
+d5 $ slowcat [
+  n "c4",
+  n "",
+  n "f4 c4 ~ ~",
+  n "",
+  n "f4 c4 g3 ~",
+  --
+  n "",
+  n "~ c4 f4 d4",
+  --
+  n "",
+  n "f4 c4",
+  n "",
+  n "~ f4 c4 g3",
+  n ""
+]
+# s "supermandolin"
+# legato 2.5
+# shape 0.8
+# gain 0.7
+
+d6 $ slow 2 $ stack[
+  n "[c, e]" # gain 0.65 # speed 1.5 # legato 2 # shape (scale 0.125 1.0 (slow 1.0 sine1)),
+  n "",
+  n "",
+  n "",
+  --
+  n "e" # gain 0.5 # speed 1.5 # legato 2 # shape (scale 0.125 1.0 (slow 1.0 sine1)),
+  n "",
+  n "",
+  n "",
+  --
+  n "d" # gain 0.5
+]
+# s "supermandolin"

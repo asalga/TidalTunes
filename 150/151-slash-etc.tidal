@@ -1,0 +1,45 @@
+hush
+
+bps(2)
+
+d1 $ slowcat [
+  s  "[db*4, sn sn ~ db:5]"
+]
+
+d2
+$ s "[db*8, sn:3]"
+# gain "[1 1 0 1]/4"
+
+d3
+$ every 3 (# coarse 5)
+$ slowcat [
+  s "numbers:0 ~~ numbers:1",
+  s "",
+  s "",
+  s "numbers:0 ~~ numbers:1" # coarse 8,
+  s "",
+  s "",
+  s "",
+  s ""
+]
+# vowel "o"
+
+
+d7
+$ sound "sid*4"
+# cutoff (scale 250 1000 $ slow 8 $ sine)
+# resonance "0.52"
+# gain 0.9
+
+-- sfx
+d8
+$ stut 4 0.5 0.95
+$ every 2 (# speed "3.0")
+   $ s "[sid:4*4, sid:5 ~ sid:6]"
+   # gain "[1 1 1 1 0 1 0 1]/8"
+   # pan sine1
+
+-- sfx
+d9
+$ s "[db*8 ~*1, ~*4 industrial:2*4 industrial:3]"
+# gain "[0 0 0 0 0 0 1.0 0]/8"

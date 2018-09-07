@@ -1,0 +1,83 @@
+hush
+
+bps(2)
+
+d1 $ slow 2 $ slowcat [
+  s "[db:5*4, house]",
+  s "[~ ~ db:5*2, house*2 ~ ~]"
+]
+# gain 0.8
+
+d2 $ slowcat [
+  s "sn(3,8)",
+  s "sn*4",
+  s "",
+  -- s "glitch2:2",
+  s "sd:5 ~ ~ sd:5*3",
+  --
+  s "sn(3,8)",
+  s "sn*4",
+  s "",
+  -- s "glitch2:2",
+  s "sn(3,8)"
+]
+
+d3
+$ every 4 (stut 8 0.25 0.5)
+$ s "db"
+
+-- triangle
+d4 $ slowcat[
+  s "",
+  s "db:8 ~ ~ ~"
+  -- s " ",
+]
+
+d5
+$ slowcat [
+  s "~ ~ ~ ~",
+  s "~ ~ ~ ~",
+  s "~ ~ ~ ~"
+  -- s "hh ~ hh ~ hh ~ hh ~"
+]
+# gain 0.75
+
+d7
+$ every 2 (# speed "2.0")
+$ slowcat [
+  s "",
+  s "",
+  s "[sid:4*4, sid:5 ~ sid:6]",
+  s "[sid:4*4, sid:5 ~ sid:6]",
+  s "",
+  s ""
+]
+# gain 0.7
+
+
+d8 $ stut 5 0.25 1.0
+$ s "[arpy, sid]"
+# gain  "[1 0 0 0   0   1 0 0]/8"
+# speed "[1 0 0 0  0.8  0 0 0]/8"
+
+
+d9 $ slowcat[
+  n "[c, e]",
+  n "",
+  n "[c, f]",
+  n "",
+  --
+  n "[c, e]",
+  n "",
+  n "e",
+  n "d",
+  --
+  n "[c, e]",
+  n "",
+  n "",
+  n ""
+]
+# legato 4
+# s "superpiano"
+# speed 0.125
+# gain 0.7

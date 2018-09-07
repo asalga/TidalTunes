@@ -1,0 +1,73 @@
+hush
+
+bps(2)
+
+d1
+-- $ every 1 (stut 4 0.25 0.125)
+$ slowcat [
+  s "hh:8*4",
+  s "hh:8*4",
+  s "hh:8*4",
+  s $ fast 4 "hh:8*4"
+]
+# coarse 10
+
+
+d2
+$ stut 4 0.25 0.5
+$ slowcat [
+  s "",s "",s "",
+  s $ fast 4  "~ ~ ~ hh:8*2"
+]
+
+d3 $ slowcat [
+  s "house",
+  s "house",
+  s "house",
+  s "[house, sid*2]"
+]
+
+d4  $ slowcat [
+  s "",
+  s "cp ~ ~ cp",
+  s "",
+  s "cp ~ ~ cp",
+  --
+  s "cp",
+  s "cp",
+  s "",
+  s $ fast 2 "~ ~ cp cp"
+]
+d4 silence
+
+d5
+$ every 4 (stut 4 0.5 0.5)
+$ slowcat [
+  n "",
+  n "",
+  n "8 2 1 0" # s "arpy",
+  n "0 1 2 3" # s "arpy",
+  --
+  n "",
+  n "",
+  n "8 2 1 0" # s "arpy",
+  n "[8 2 1 0]*2" # s "arpy" # legato 0.5
+]
+-- # legato 0.25
+
+d6
+$ every 3 (rev)
+$ n ("c3 e4 ~*4 f4")
+# s "superchip"
+# legato 0.8
+# gain 0.8
+
+
+
+d7
+$ n "c c ~ e d e"
+   # s "supersaw"
+   # legato (scale 0.0 10.0 (slow 1 sine))
+   # gain 0.5
+
+   d7 silence

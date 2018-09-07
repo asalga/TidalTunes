@@ -1,0 +1,56 @@
+hush
+
+bps(1)
+
+d1 $ slowcat [
+    s "sn ~ ~ ~",
+    s "sn ~ ~ ~",
+    s "sn ~ ~ ~",
+    s "~ ~ ~ sn"
+    -- s "[db(2,5) , hh*4]"
+    -- s "[db(2,5) , hh*4]"
+    -- s "db*4" # coarse 25
+]
+
+d2 $ slowcat [
+  s "[hh*4, db*2 ~ ~]",
+  s "",
+  s "[hh*4, db*2 ~ ~]",
+  s ""
+]
+
+d3 $ slowcat [
+  s "~ ~ db:3*1 ~",
+  s "~ ~ db:3*2 ~",
+  s "~ ~ db:3*1 ~",
+  s ""
+]
+
+d4
+$ every 2 (# speed "2.0")
+$ slowcat [
+  s "",
+  s "",
+  s "[sid:4*4, sid:5 ~ sid:6]",
+  s "",
+  --
+  s "",
+  s "[sid:4*4, sid:5 ~ sid:6]",
+  s "",
+  s ""
+]
+# gain 0.7
+
+-- woom
+d8 $ stack[
+  n "[c, f]"
+  n "[c]",
+  n "[c, e]",
+  n "[c]",
+]
+# s "supersaw"
+-- # legato "[1 1 1 0.5]/4"
+# gain 0.3
+# speed 0.25
+# legato 10
+# shape (scale 0.125 1.0 (slow 1.0  sine1)),

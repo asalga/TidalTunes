@@ -1,0 +1,88 @@
+hush
+
+bps(2)
+
+d1 $ slowcat [
+  s "[db:5*4, house:0]",
+  s "[db:5, house:0, db*2, sn*4]",
+  s "[db:5*4, house:0]",
+  s "[db:5, db*4]"
+]
+
+d2 $ slowcat[
+  s "",
+  s "dr55:2",
+  s "",
+  s "dr55:2"
+]
+
+-- triangle
+d3 $ s "db:8"
+
+-- stuttered drum
+d4 $ stut 3 (1/2) 0.25
+$ slowcat [
+  s "",
+  -- s "",
+  -- s "",
+  s "db*2"
+]
+# coarse 5
+# vowel "u"
+
+-- melody
+d5
+$ slowcat [
+  s "~ arpy*3" # n (irand 4),
+  s "~ [arpy:4 arpy:3 arpy:2]",
+  --
+  s "",
+  -- s "arpy:6 ~ arpy:4 ~",
+  -- s "~ [arpy:6 arpy:4 arpy:2]",
+  --
+  s "",
+  s "",
+  s "",
+  s ""
+  --
+]
+# vowel "i"
+# gain 0.8
+# speed 0.5
+# cutoff (scale 250 1000 $ slow 8 $ sine)
+-- # resonance "0.52"
+
+d6
+$ stut 3 0.75 0.25
+$ slowcat[
+    n "c2 * 2",
+    n "~ c2 d2 e2",
+    n "~ d2 e2 ~",
+    n "",
+    --
+    n "c3 ~ ~ c3",
+    n "",
+    n "d2",
+    n "",
+    --
+    n "d",
+    n "",
+    n "",
+    n "",
+    --
+    n "d",
+    n "",
+    n "c",
+    n ""
+]
+-- # legato 0.85
+# s "super808"
+-- # resonance 0.1
+# room 0.25
+# orbit 1
+-- # shape 0.8
+# cutoff (scale 900 2800 $ slow 8 $ sine)
+
+-- static
+d7 $ s "ade:3 ~ ~ ade:5"
+   # gain "[0 0.4 0 0 0.6 0 0 0.5]/8"

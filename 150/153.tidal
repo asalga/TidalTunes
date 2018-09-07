@@ -1,0 +1,64 @@
+hush
+
+d1 $ slowcat [
+  s "db:5",
+  s "db:5*2",
+  s "db:5",
+  s "db:5*2",
+  --
+  s "[db:5, house]",
+  s "db:5*4"
+]
+
+d2 $ slowcat [
+  s "sn(3,8)",
+  s "sn(3,8)",
+  s "sd:5*4",
+  s "sn(3,8)"
+]
+
+-- triangle
+d3 $ slowcat[
+  s "",
+  s "",
+  s "",
+  s "glitch2:2",
+  --
+  s "",
+  s "",
+  s "",
+  s "db:8*4"
+]
+
+d4
+$ stut 4 0.5 0.25
+$ slowcat [
+  s "arpy*4" # n (irand 4),
+  s "",
+  s "newnotes*8" # n (irand 8),
+  s "",
+  --
+  s "",
+  s "[arpy*2, newnotes*2]" # n (irand 2),
+  s "",
+  s ""
+]
+# legato (slow (1/8) sine)
+
+d5
+$ slowcat [
+  n "c3 ~ c3 ~ e3 c3 ~",
+  n "",
+  n "e3 ~ e3 ~ b3 b3 ~",
+  n "",
+  --
+  n "c3",
+  n "",
+  n "c3",
+  n ""
+]
+# s "super808"
+# speed 0.125
+# gain 0.8
+-- # legato (scale 1 2.0 $ slow 4 sine1)
+# legato (scale 0.25 0.5 $ slow 2 $ sine)

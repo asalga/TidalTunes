@@ -1,0 +1,116 @@
+hush
+
+bps(2)
+
+d1
+$ slowcat [
+  s "",
+  s "sn*4",
+  s "sn",
+  s "",
+  -- s "hh hh hh hh",
+  --
+  s "sn",
+  s "sn",
+  s "",
+  s "sn"
+]
+# crush 3
+
+d2
+$ slowcat [
+  s "[sid:1*4, db]" #speed 0.9,
+  s "[sid:1*4, db]",
+  s "[sid:1*4, db]" #speed 0.9,
+  s "[sid:1*4, db]",
+  --
+  s "[sid:1*4, db]" #speed 0.9,
+  s "[sid:1*4, db]",
+  s "[sid:1*4, db]" #speed 0.9,
+  s "[sid:1*4, db]",
+  --
+  s "[sid:1*4, sn:3]" #speed 0.9,
+  s "[sid:1*4, db]",
+  s "[sid:1*4, sn:3]" #speed 0.9,
+  s "sn:3 ~ sn:3 ~",
+  --
+  s "[sid:1*4, db]" #speed 0.9,
+  s "[sid:1*4, db]",
+  s "[sid:1*4, db]" #speed 0.9,
+  s "[sid:1*4, db]",
+  --
+  s "[sid:1*4, sn:3]",
+  s "[sid:1*4, sn:3]" #speed 0.9,
+  s "[sid:1*4, sn:3]",
+  s "sn:5 sn:5 sn:5 ~" #speed 0.8
+]
+# crush 8
+
+d3
+$ stut 5 0.5 0.5
+$ slowcat [
+  s "sid" #speed 0.2,
+  s "",
+  s "sid" #speed 0.5,
+  s ""
+]
+# accelerate 1
+
+d4
+$ slowcat [
+  s "arpy:0",
+  s "",
+  -- s "arpy:1",
+  s "arpy:3 arpy:3",
+  s "",
+  --
+  s "",
+  s "",
+  s "",
+  s "",
+  --
+  -- s "arpy:2*4",
+  -- s "arpy:1*2",
+  -- s "arpy arpy:1 arpy:2 arpy:3",
+  -- s "",
+  --
+  s "arpy:2",
+  s "",
+  s "arpy:0 ~ arpy:0 ~",
+  s "",
+  --
+  s "",
+  s "",
+  s "",
+  s ""
+]
+# speed 0.4
+# accelerate "-0.1"
+# crush 4
+# gain 0.9
+
+d5
+$ slowcat [
+  s "newnotes:1*4" #speed 0.5,
+  s "newnotes:1*4" #speed 0.7,
+  s "newnotes:1*4" #speed 0.9,
+  s "newnotes:1*4" #speed 0.4,
+  --
+  s "",
+  s "",
+  s "",
+  s "",
+  --
+  s "newnotes:1*4" #speed 0.9,
+  s "newnotes:1*4" #speed 0.8,
+  s "newnotes:1*4" #speed 0.7,
+  s "newnotes:1*4" #speed 0.5,
+  --
+  s "",
+  s "",
+  s "",
+  s ""
+]
+# accelerate "-0.1"
+# gain 0.8
+-- # crush 10

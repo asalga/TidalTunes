@@ -7,6 +7,10 @@ hush
 -- cr, drumtraks, house, hh, ht, feel, lt, drum, gretsch
 -- sine1, tri, saw
 
+the good stuff:
+"db:5"
+
+d1 $ s "house:0"
 
 --------------------------------------------
 -- db
@@ -98,7 +102,7 @@ d1 $ s "bass2:3"
 
 
 
-d1 $ s "bass:2"
+d1 $ s "bass:1"
 
 
 
